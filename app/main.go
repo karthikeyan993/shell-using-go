@@ -11,8 +11,14 @@ import (
 var _ = fmt.Print
 
 func main() {
-	fmt.Print("$ ")
-	command, _ := bufio.NewReader(os.Stdin).ReadString('\n')
-	command = strings.TrimSpace(command)
-	fmt.Printf("%s: command not found\n", command)
+
+	for {
+		fmt.Print("$ ")
+		command, err := bufio.NewReader(os.Stdin).ReadString('\n')
+		if err != nil {
+			fmt.Printf("read error: %v\n", err)
+		}
+		command = strings.TrimSpace(command)
+		fmt.Printf("%s: command not found\n", command)
+	}
 }
