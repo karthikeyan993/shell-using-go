@@ -19,6 +19,9 @@ func main() {
 			fmt.Printf("read error: %v\n", err)
 		}
 		command = strings.TrimSpace(command)
+		if command == "exit" {
+			os.Exit(0)
+		}
 		fmt.Printf("%s: command not found\n", command)
 	}
 }
