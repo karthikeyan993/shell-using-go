@@ -14,5 +14,5 @@ func main() {
 	fmt.Print("$ ")
 	command, _ := bufio.NewReader(os.Stdin).ReadString('\n')
 	command = strings.TrimSpace(command)
-	fmt.Printf("$ %s: command not found\n", command)
+	fmt.Printf("%s: command not found\n", command)
 }
